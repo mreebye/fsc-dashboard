@@ -117,3 +117,179 @@ button:focus-visible {
   font-size: .58rem;
   color: #3a4455;
 }
+/* pill “button” look for inspection tags */
+.ins-tags {
+  display: flex;
+  gap: .4rem;
+  flex-wrap: wrap;
+  margin-top: .25rem;
+}
+
+.chip {
+  background: #ffffff;
+  border: 1px solid rgba(11, 113, 217, 0.14);
+  border-radius: 999px;
+  padding: .25rem .65rem .32rem;
+  font-size: .58rem;
+  font-weight: 600;
+  color: #1f2a3a;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+  line-height: 1;
+  user-select: none;
+}
+
+.chip:hover {
+  background: #f7f9fc;
+  border-color: rgba(11, 113, 217, 0.22);
+}
+/* --- Risk Signals Heatmap: horizontal-only row dividers --- */
+.heatmap-table {
+  width: 100%;
+}
+
+/* Make each row span full width and draw a bottom rule */
+.heatmap-row {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(6, 0.8fr); /* company + 6 signal cols */
+  align-items: center;
+  padding: .55rem 0;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08); /* subtle horizontal line */
+}
+
+/* Header row styling + its own divider */
+.heatmap-row.header {
+  font-weight: 600;
+  color: #6b7280;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+/* Center the dots in their columns; keep company name left-aligned */
+.heatmap-row > span:not(:first-child) {
+  justify-self: center;
+}
+
+/* Optional: make the line even lighter (hairline) */
+/* .heatmap-row { border-bottom: 1px solid rgba(15,23,42,.06); } */
+/* Risk Signals Heatmap — horizontal-only row dividers */
+.heatmap-table { width: 100%; }
+
+.heatmap-row {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(6, 0.8fr); /* company + 6 cols */
+  align-items: center;
+  padding: .55rem 0;
+  border-bottom: 1px solid rgba(15,23,42,.08);  /* thin horizontal line */
+}
+
+.heatmap-row.header {
+  font-weight: 600;
+  color: #6b7280;
+  border-bottom: 1px solid rgba(15,23,42,.12);
+}
+
+.heatmap-row:last-child { border-bottom: none; } /* no line after last row */
+
+/* center the dots, keep company left */
+.heatmap-row > span:not(:first-child) { justify-self: center; }
+
+/* Ask UPilot: examples panel */
+.ask-examples{
+  background:#f3f6fb;                 /* soft panel background */
+  border:1px solid rgba(15,23,42,.08); /* subtle border */
+  border-radius:.8rem;
+  padding:.6rem .8rem;
+  margin-top:.25rem;
+  text-align:left;                     /* ensure left-aligned text */
+}
+
+.ask-ex-title{
+  margin:0 0 .35rem 0;
+  font-size:.61rem;
+  color:#3b4354;
+}
+
+.ask-ex-list{
+  margin:0;                            /* remove extra left margin */
+  padding-left:1rem;                   /* keep bullets neatly aligned */
+  list-style:disc;
+  font-size:.6rem;
+  color:#4a5162;
+  line-height:1.45;
+}
+
+.ask-ex-list li{ margin:.1rem 0; }
+
+/* Predictive Risk Engine – tooltip */
+.chart-tooltip{
+  position:absolute;
+  transform: translate(-50%, -110%); /* center and float above the point */
+  background:#ffffff;
+  border:1px solid rgba(15,23,42,.12);
+  border-radius:.55rem;
+  padding:.42rem .56rem;
+  font-size:.6rem;
+  color:#1f2733;
+  box-shadow:0 10px 22px rgba(15,23,42,.12);
+  pointer-events:none;
+  opacity:0;
+  transition: opacity .12s ease;
+  white-space:nowrap;
+}
+.chart-tooltip.show{ opacity:1; }
+.chart-tooltip .tt-row{ line-height:1.2; }
+
+/* optional: make hovered dot feel a tad bigger */
+.widget.predict circle{ transition: r .08s ease; }
+.widget.predict circle:hover{ r:5.4; }
+
+
+.chart-tooltip{
+  position:absolute;
+  transform: translate(-50%, -110%);
+  background:#fff;
+  border:1px solid rgba(15,23,42,.12);
+  border-radius:.55rem;
+  padding:.42rem .56rem;
+  font-size:.6rem;
+  color:#1f2733;
+  box-shadow:0 10px 22px rgba(15,23,42,.12);
+  pointer-events:none;
+  opacity:0;
+  transition: opacity .12s ease;
+  white-space:nowrap;
+}
+.chart-tooltip.show{ opacity:1; }
+.chart-tooltip .tt-row{ line-height:1.2; }
+
+
+
+powered by UPilot footer
+.fsc-footer {
+  width: 100%;
+  margin: 32px auto 24px;     /* centered and spaced from content */
+  padding: 8px 0;
+  text-align: center;          /* middle of the screen horizontally */
+  font-size: 0.66rem;          /* reduced size */
+  color: #8a8fa3;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+
+/* Regular end-of-page footer, centered */
+.fsc-footer {
+  position: static;           /* important: not fixed */
+  width: 100%;
+  text-align: center;
+  margin: 32px auto 24px;
+  padding: 8px 0;
+  font-size: 0.62rem;         /* smaller */
+  color: #8a8fa3;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.fsc-footer-brand {
+  color: #6a6f7d;
+  font-weight: 600;
+}
+
+}

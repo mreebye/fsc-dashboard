@@ -436,54 +436,73 @@ export default function FscDashboardModern() {
 
           {/* MAIN GRID as per your mockup */}
           <section className="main-grid">
-            {/* RISK HEATMAP */}
-            <article className="widget heatmap">
-              <div className="widget-head">
-                <div className="w-title">
-                  <div className="w-icon">📡</div>
-                  Risk Signals Heatmap
-                </div>
-                <div className="mini-pill">Dimensions</div>
-              </div>
-              <div className="heatmap-table">
-                <div className="heatmap-row header">
-                  <span>Company</span>
-                  <span>KYC</span>
-                  <span>Filings</span>
-                  <span>Governance</span>
-                  <span>Sanctions</span>
-                  <span>PEPs</span>
-                  <span>Audit</span>
-                </div>
-                <div className="heatmap-row">
-                  <span>Ocarion</span>
-                  <span className="dot green" />
-                  <span className="dot yellow" />
-                  <span className="dot green" />
-                  <span className="dot orange" />
-                  <span className="dot yellow" />
-                  <span className="dot green" />
-                </div>
-                <div className="heatmap-row">
-                  <span>Rogers</span>
-                  <span className="dot yellow" />
-                  <span className="dot red" />
-                  <span className="dot green" />
-                  <span className="dot yellow" />
-                  <span className="dot green" />
-                  <span className="dot yellow" />
-                </div>
-                <div className="heatmap-row">
-                  <span>Trident</span>
-                  <span className="dot green" />
-                  <span className="dot yellow" />
-                  <span className="dot yellow" />
-                  <span className="dot yellow" />
-                  <span className="dot green" />
-                  <span className="dot green" />
-                </div>
-              </div>
-            </article>
+          {/* RISK HEATMAP */}
+<article className="widget heatmap">
+  <div className="widget-head">
+    <div className="w-title">
+      <div className="w-icon">📡</div>
+      Risk Signals Heatmap
+    </div>
+    <div className="mini-pill">Dimensions</div>
+  </div>
+
+  <div className="heatmap-table">
+    <div className="heatmap-row header">
+      <span>Company</span>
+      <span>KYC</span>
+      <span>Filings</span>
+      <span>Governance</span>
+      <span>Sanctions</span>
+      <span>PEPs</span>
+      <span>Audit</span>
+    </div>
+
+    {/* Ocarion */}
+    <div className="heatmap-row">
+      <span>Ocarion</span>
+      <span className="dot green" />
+      <span className="dot yellow" />
+      <span className="dot green" />
+      <span className="dot orange" />
+      <span className="dot yellow" />
+      <span className="dot green" />
+    </div>
+
+    {/* Rogers */}
+    <div className="heatmap-row">
+      <span>Rogers</span>
+      <span className="dot yellow" />
+      <span className="dot red" />
+      <span className="dot green" />
+      <span className="dot yellow" />
+      <span className="dot green" />
+      <span className="dot yellow" />
+    </div>
+
+    {/* Axis (new) */}
+    <div className="heatmap-row">
+      <span>Axis</span>
+      <span className="dot red" />
+      <span className="dot red" />
+      <span className="dot yellow" />
+      <span className="dot yellow" />
+      <span className="dot yellow" />
+      <span className="dot green" />
+    </div>
+
+    {/* Trident */}
+    <div className="heatmap-row">
+      <span>Trident</span>
+      <span className="dot green" />
+      <span className="dot yellow" />
+      <span className="dot yellow" />
+      <span className="dot yellow" />
+      <span className="dot green" />
+      <span className="dot green" />
+    </div>
+  </div>
+</article>
+
 
             {/* COMPLIANCE SCOREBOARD */}
             <article className="widget scoreboard">
@@ -620,7 +639,8 @@ export default function FscDashboardModern() {
         Pending approvals: 3
       </p>
       <p style={{ marginTop: "6px", color: "#8a8fa3" }}>
-        Senior management approval required for all PEPs, if not granted in 5 days.
+        Senior management approval required for all PEPs,<br />
+         if not granted in 5 days.
       </p>
     </div>
   </div>
@@ -638,6 +658,7 @@ export default function FscDashboardModern() {
       Export Selected Packs
     </button>
   </div>
+
   <div className="inspection-list">
     <div className="inspection-item risk-high">
       <div className="ins-left">
@@ -645,7 +666,9 @@ export default function FscDashboardModern() {
         <div>
           <div className="ins-title">Magma Corp</div>
           <div className="ins-tags">
-            Sanctions backlog • CDD overdue • High-risk corridor gates
+            <span className="chip">Sanctions backlog</span>
+            <span className="chip">CDD overdue</span>
+            <span className="chip">High-risk corridor gates</span>
           </div>
         </div>
       </div>
@@ -662,7 +685,8 @@ export default function FscDashboardModern() {
         <div>
           <div className="ins-title">Azure Ltd</div>
           <div className="ins-tags">
-            EDD pending (PEP) • Open audit findings
+            <span className="chip">EDD pending (PEP)</span>
+            <span className="chip">Open audit findings</span>
           </div>
         </div>
       </div>
@@ -679,7 +703,7 @@ export default function FscDashboardModern() {
         <div>
           <div className="ins-title">Elk Corporate</div>
           <div className="ins-tags">
-            Thematic: third-party payments
+            <span className="chip">Thematic: third-party payments</span>
           </div>
         </div>
       </div>
@@ -691,6 +715,7 @@ export default function FscDashboardModern() {
     </div>
   </div>
 </article>
+
 
 
             {/* STR & EDD */}
@@ -897,65 +922,115 @@ export default function FscDashboardModern() {
       Predictive Risk Engine (Prioritise Supervision)
     </div>
   </div>
-  <svg viewBox="0 0 320 170" style={{ width: "100%" }}>
-    {/*
-      Chart box:
-      left = 40, right = 300
-      top = 20, bottom = 130
-      X: 0,25,50,75,100
-      Y: 0,25,50,75,100
-    */}
-    {/* horizontal grid */}
-    <line x1="40" y1="20" x2="300" y2="20" stroke="#d5dbe3" strokeDasharray="4 4" strokeWidth="0.7" />
-    <line x1="40" y1="47" x2="300" y2="47" stroke="#d5dbe3" strokeDasharray="4 4" strokeWidth="0.7" />
-    <line x1="40" y1="74" x2="300" y2="74" stroke="#d5dbe3" strokeDasharray="4 4" strokeWidth="0.7" />
-    <line x1="40" y1="101" x2="300" y2="101" stroke="#d5dbe3" strokeDasharray="4 4" strokeWidth="0.7" />
-    <line x1="40" y1="130" x2="300" y2="130" stroke="#d5dbe3" strokeWidth="0.7" />
 
-    {/* vertical grid at 25, 50, 75 */}
-    <line x1="103" y1="20" x2="103" y2="130" stroke="#d5dbe3" strokeDasharray="4 4" strokeWidth="0.7" />
-    <line x1="166" y1="20" x2="166" y2="130" stroke="#d5dbe3" strokeDasharray="4 4" strokeWidth="0.7" />
-    <line x1="233" y1="20" x2="233" y2="130" stroke="#d5dbe3" strokeDasharray="4 4" strokeWidth="0.7" />
+  {(() => {
+    const React_ = React; // ensure React is in scope
+    const [tip, setTip] = React_.useState({
+      show: false, x: 0, y: 0, risk: 0, impact: ""
+    });
 
-    {/* axes */}
-    <line x1="40" y1="20" x2="40" y2="130" stroke="#4d5a6c" strokeWidth="1.2" />
-    <line x1="40" y1="130" x2="300" y2="130" stroke="#4d5a6c" strokeWidth="1.2" />
+    // scatter points (same positions you had)
+    const pts = [
+      { cx: 90,  cy: 100 },
+      { cx: 105, cy: 97  },
+      { cx: 125, cy: 86  },
+      { cx: 145, cy: 74  },
+      { cx: 168, cy: 65  },
+      { cx: 195, cy: 55  },
+      { cx: 215, cy: 45  },
+      { cx: 235, cy: 35  },
+      { cx: 255, cy: 60  },
+    ];
 
-    {/* y labels */}
-    <text x="18" y="23" fontSize="9" fill="#1f2733">100</text>
-    <text x="22" y="50" fontSize="9" fill="#1f2733">75</text>
-    <text x="22" y="77" fontSize="9" fill="#1f2733">50</text>
-    <text x="22" y="104" fontSize="9" fill="#1f2733">25</text>
-    <text x="25" y="134" fontSize="9" fill="#1f2733">0</text>
+    // chart box used for % mapping
+    const X0 = 40, X1 = 300, Y0 = 20, Y1 = 130; // 0..100 on both axes
 
-    {/* x labels */}
-    <text x="38" y="145" fontSize="9" fill="#1f2733">0</text>
-    <text x="96" y="145" fontSize="9" fill="#1f2733">25</text>
-    <text x="160" y="145" fontSize="9" fill="#1f2733">50</text>
-    <text x="226" y="145" fontSize="9" fill="#1f2733">75</text>
-    <text x="294" y="145" fontSize="9" fill="#1f2733">100</text>
+    const toRiskPct = (cx) =>
+      Math.max(0, Math.min(100, Math.round(((cx - X0) / (X1 - X0)) * 100)));
 
-    {/*
-      Dots (same feel as screenshot):
-      (22,30) -> x≈ 40 + (22/100)*260 ≈ 97
-      but screenshot shows first dot a bit left, so we hard-place them.
-      We'll just place them to match the reference visually.
-    */}
-    <circle cx="90" cy="100" r="4" fill="#1f76c2" />
-    <circle cx="105" cy="97" r="4" fill="#1f76c2" />
-    <circle cx="125" cy="86" r="4" fill="#1f76c2" />
-    <circle cx="145" cy="74" r="4" fill="#1f76c2" />
-    <circle cx="168" cy="65" r="4" fill="#1f76c2" />
-    <circle cx="195" cy="55" r="4" fill="#1f76c2" />
-    <circle cx="215" cy="45" r="4" fill="#1f76c2" />
-    <circle cx="235" cy="35" r="4" fill="#1f76c2" />
-    <circle cx="255" cy="60" r="4" fill="#1f76c2" />
+    const toImpactLabel = (cy) => {
+      const score = Math.max(0, Math.min(100, Math.round(((Y1 - cy) / (Y1 - Y0)) * 100)));
+      return score >= 70 ? "High" : score >= 40 ? "Medium" : "Low";
+    };
 
-  </svg>
+    const showTip = (p) => (e) => {
+      setTip({
+        show: true,
+        x: e.nativeEvent.offsetX,
+        y: e.nativeEvent.offsetY,
+        risk: toRiskPct(p.cx),
+        impact: toImpactLabel(p.cy),
+      });
+    };
+
+    const moveTip = (e) =>
+      setTip((t) => ({ ...t, x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY }));
+
+    const hideTip = () => setTip((t) => ({ ...t, show: false }));
+
+    return (
+      <div className="scatter-wrap" onMouseLeave={hideTip} style={{ position: "relative" }}>
+        <svg viewBox="0 0 320 170" style={{ width: "100%" }} onMouseMove={moveTip}>
+          {/* grid */}
+          <line x1="40" y1="20" x2="300" y2="20" stroke="#d5dbe3" strokeDasharray="4 4" strokeWidth="0.7" />
+          <line x1="40" y1="47" x2="300" y2="47" stroke="#d5dbe3" strokeDasharray="4 4" strokeWidth="0.7" />
+          <line x1="40" y1="74" x2="300" y2="74" stroke="#d5dbe3" strokeDasharray="4 4" strokeWidth="0.7" />
+          <line x1="40" y1="101" x2="300" y2="101" stroke="#d5dbe3" strokeDasharray="4 4" strokeWidth="0.7" />
+          <line x1="40" y1="130" x2="300" y2="130" stroke="#d5dbe3" strokeWidth="0.7" />
+
+          <line x1="103" y1="20" x2="103" y2="130" stroke="#d5dbe3" strokeDasharray="4 4" strokeWidth="0.7" />
+          <line x1="166" y1="20" x2="166" y2="130" stroke="#d5dbe3" strokeDasharray="4 4" strokeWidth="0.7" />
+          <line x1="233" y1="20" x2="233" y2="130" stroke="#d5dbe3" strokeDasharray="4 4" strokeWidth="0.7" />
+
+          {/* axes */}
+          <line x1="40" y1="20"  x2="40"  y2="130" stroke="#4d5a6c" strokeWidth="1.2" />
+          <line x1="40" y1="130" x2="300" y2="130" stroke="#4d5a6c" strokeWidth="1.2" />
+
+          {/* labels */}
+          <text x="18" y="23"  fontSize="9" fill="#1f2733">100</text>
+          <text x="22" y="50"  fontSize="9" fill="#1f2733">75</text>
+          <text x="22" y="77"  fontSize="9" fill="#1f2733">50</text>
+          <text x="22" y="104" fontSize="9" fill="#1f2733">25</text>
+          <text x="25" y="134" fontSize="9" fill="#1f2733">0</text>
+
+          <text x="38"  y="145" fontSize="9" fill="#1f2733">0</text>
+          <text x="96"  y="145" fontSize="9" fill="#1f2733">25</text>
+          <text x="160" y="145" fontSize="9" fill="#1f2733">50</text>
+          <text x="226" y="145" fontSize="9" fill="#1f2733">75</text>
+          <text x="294" y="145" fontSize="9" fill="#1f2733">100</text>
+
+          {/* dots */}
+          {pts.map((p, i) => (
+            <circle
+              key={i}
+              cx={p.cx}
+              cy={p.cy}
+              r="4"
+              fill="#1f76c2"
+              style={{ cursor: "pointer" }}
+              onMouseEnter={showTip(p)}
+            />
+          ))}
+        </svg>
+
+        {/* Tooltip */}
+        <div
+          className={`chart-tooltip ${tip.show ? "show" : ""}`}
+          style={{ left: tip.x, top: tip.y }}
+          aria-hidden={!tip.show}
+        >
+          <div className="tt-row"><strong>Predictive Risk:</strong> {tip.risk}%</div>
+          <div className="tt-row"><strong>Regulatory Impact:</strong> {tip.impact}</div>
+        </div>
+      </div>
+    );
+  })()}
+
   <p className="small-note" style={{ marginTop: "6px" }}>
     Each dot is a company; click-through would open a dossier (full build).
   </p>
 </article>
+
 
 
             {/* NATIONAL AML/CFT */}
@@ -966,56 +1041,108 @@ export default function FscDashboardModern() {
       National AML/CFT Readiness Index
     </div>
   </div>
-  <svg viewBox="0 0 280 140" style={{ width: "100%" }}>
-    {/* frame */}
-    <rect x="40" y="15" width="220" height="100" rx="10" fill="#fff" stroke="#e1e5ee" />
 
-    {/* horizontal grid (aligned to 100, 94, 86, 78, 70) */}
-    <line x1="40" y1="25" x2="260" y2="25" stroke="#d7dbe3" strokeDasharray="4 4" strokeWidth="0.6" strokeOpacity="0.8" />
-    <line x1="40" y1="43" x2="260" y2="43" stroke="#d7dbe3" strokeDasharray="4 4" strokeWidth="0.6" strokeOpacity="0.8" />
-    <line x1="40" y1="67" x2="260" y2="67" stroke="#d7dbe3" strokeDasharray="4 4" strokeWidth="0.6" strokeOpacity="0.8" />
-    <line x1="40" y1="91" x2="260" y2="91" stroke="#d7dbe3" strokeDasharray="4 4" strokeWidth="0.6" strokeOpacity="0.8" />
-    <line x1="40" y1="115" x2="260" y2="115" stroke="#d7dbe3" strokeWidth="0.6" strokeOpacity="0.8" />
+  {(() => {
+    const React_ = React;
+    const [tip, setTip] = React_.useState({
+      show: false,
+      x: 0,
+      y: 0,
+      q: "",
+      score: 0
+    });
 
-    {/* y-axis */}
-    <line x1="40" y1="15" x2="40" y2="115" stroke="#8d939d" strokeWidth="1" />
+    // dot positions + labels + scores (matches your current plot)
+    const dots = [
+      { cx: 60,  cy: 73, q: "Q1", score: 85 },
+      { cx: 130, cy: 67, q: "Q2", score: 86 },
+      { cx: 200, cy: 64, q: "Q3", score: 87 },
+      { cx: 250, cy: 55, q: "Q4", score: 90 },
+    ];
 
-    {/* vertical dashed lines – now aligned with dots */}
-    <line x1="130" y1="15" x2="130" y2="115" stroke="#d7dbe3" strokeDasharray="4 4" strokeWidth="0.6" strokeOpacity="0.8" />
-    <line x1="200" y1="15" x2="200" y2="115" stroke="#d7dbe3" strokeDasharray="4 4" strokeWidth="0.6" strokeOpacity="0.8" />
+    const onEnter = (d) => (e) =>
+      setTip({ show: true, x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY, q: d.q, score: d.score });
 
-    {/* x-axis */}
-    <line x1="40" y1="115" x2="260" y2="115" stroke="#8d939d" strokeWidth="1" />
+    const onMove = (e) =>
+      setTip((t) => ({ ...t, x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY }));
 
-    {/* y labels */}
-    <text x="10" y="28" fontSize="9" fill="#5c6270">100</text>
-    <text x="16" y="46" fontSize="9" fill="#5c6270">94</text>
-    <text x="16" y="70" fontSize="9" fill="#5c6270">86</text>
-    <text x="16" y="94" fontSize="9" fill="#5c6270">78</text>
-    <text x="22" y="118" fontSize="9" fill="#5c6270">70</text>
+    const onLeave = () => setTip((t) => ({ ...t, show: false }));
 
-    {/* line (values ~85 → 86 → 87 → 90) */}
-    <polyline
-      points="60,73 130,67 200,64 250,55"
-      fill="none"
-      stroke="#2f7bd3"
-      strokeWidth="2.4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    return (
+      <div style={{ position: "relative" }} onMouseLeave={onLeave}>
+        <svg viewBox="0 0 280 140" style={{ width: "100%" }} onMouseMove={onMove}>
+          {/* frame */}
+          <rect x="40" y="15" width="220" height="100" rx="10" fill="#fff" stroke="#e1e5ee" />
 
-    {/* dots (now perfectly on vertical grid) */}
-    <circle cx="60" cy="73" r="3.4" fill="#2f7bd3" stroke="#fff" strokeWidth="1" />
-    <circle cx="130" cy="67" r="3.4" fill="#2f7bd3" stroke="#fff" strokeWidth="1" />
-    <circle cx="200" cy="64" r="3.4" fill="#2f7bd3" stroke="#fff" strokeWidth="1" />
-    <circle cx="250" cy="55" r="3.4" fill="#2f7bd3" stroke="#fff" strokeWidth="1" />
+          {/* horizontal grid */}
+          <line x1="40" y1="25" x2="260" y2="25" stroke="#d7dbe3" strokeDasharray="4 4" strokeWidth="0.6" strokeOpacity="0.8" />
+          <line x1="40" y1="43" x2="260" y2="43" stroke="#d7dbe3" strokeDasharray="4 4" strokeWidth="0.6" strokeOpacity="0.8" />
+          <line x1="40" y1="67" x2="260" y2="67" stroke="#d7dbe3" strokeDasharray="4 4" strokeWidth="0.6" strokeOpacity="0.8" />
+          <line x1="40" y1="91" x2="260" y2="91" stroke="#d7dbe3" strokeDasharray="4 4" strokeWidth="0.6" strokeOpacity="0.8" />
+          <line x1="40" y1="115" x2="260" y2="115" stroke="#d7dbe3" strokeWidth="0.6" strokeOpacity="0.8" />
 
-    {/* x labels */}
-    <text x="54" y="132" fontSize="9" fill="#5c6270">Q1</text>
-    <text x="124" y="132" fontSize="9" fill="#5c6270">Q2</text>
-    <text x="194" y="132" fontSize="9" fill="#5c6270">Q3</text>
-    <text x="244" y="132" fontSize="9" fill="#5c6270">Q4</text>
-  </svg>
+          {/* y-axis */}
+          <line x1="40" y1="15" x2="40" y2="115" stroke="#8d939d" strokeWidth="1" />
+
+          {/* vertical dashed lines aligned with Q2 & Q3 */}
+          <line x1="130" y1="15" x2="130" y2="115" stroke="#d7dbe3" strokeDasharray="4 4" strokeWidth="0.6" strokeOpacity="0.8" />
+          <line x1="200" y1="15" x2="200" y2="115" stroke="#d7dbe3" strokeDasharray="4 4" strokeWidth="0.6" strokeOpacity="0.8" />
+
+          {/* x-axis */}
+          <line x1="40" y1="115" x2="260" y2="115" stroke="#8d939d" strokeWidth="1" />
+
+          {/* y labels */}
+          <text x="10" y="28" fontSize="9" fill="#5c6270">100</text>
+          <text x="16" y="46" fontSize="9" fill="#5c6270">94</text>
+          <text x="16" y="70" fontSize="9" fill="#5c6270">86</text>
+          <text x="16" y="94" fontSize="9" fill="#5c6270">78</text>
+          <text x="22" y="118" fontSize="9" fill="#5c6270">70</text>
+
+          {/* line (85 → 86 → 87 → 90) */}
+          <polyline
+            points="60,73 130,67 200,64 250,55"
+            fill="none"
+            stroke="#2f7bd3"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+
+          {/* dots with tooltip hooks */}
+          {dots.map((d, i) => (
+            <circle
+              key={i}
+              cx={d.cx}
+              cy={d.cy}
+              r="3.8"
+              fill="#2f7bd3"
+              stroke="#fff"
+              strokeWidth="1"
+              style={{ cursor: "pointer" }}
+              onMouseEnter={onEnter(d)}
+            />
+          ))}
+
+          {/* x labels */}
+          <text x="54" y="132" fontSize="9" fill="#5c6270">Q1</text>
+          <text x="124" y="132" fontSize="9" fill="#5c6270">Q2</text>
+          <text x="194" y="132" fontSize="9" fill="#5c6270">Q3</text>
+          <text x="244" y="132" fontSize="9" fill="#5c6270">Q4</text>
+        </svg>
+
+        {/* Tooltip (reuses .chart-tooltip styles) */}
+        <div
+          className={`chart-tooltip ${tip.show ? "show" : ""}`}
+          style={{ left: tip.x, top: tip.y }}
+          aria-hidden={!tip.show}
+        >
+          <div className="tt-row"><strong>{tip.q}</strong></div>
+          <div className="tt-row">Score: <strong>{tip.score}</strong></div>
+        </div>
+      </div>
+    );
+  })()}
+
   <p className="small-note">
     Benchmarked to FATF objectives; exportable for the FSC annual report.
   </p>
@@ -1023,29 +1150,41 @@ export default function FscDashboardModern() {
 
 
 
-            {/* ASK UPILOT */}
-            <article className="widget ask">
-              <div className="widget-head">
-                <div className="w-title">
-                  <div className="w-icon">🤖</div>
-                  Ask UPilot (AI Assistant)
-                </div>
-                <div className="mini-pill">Beta</div>
-              </div>
-              <p style={{ fontSize: ".61rem", marginBottom: "6px" }}>Examples:</p>
-              <ul style={{ fontSize: ".6rem", color: "#5e6474", marginLeft: "14px" }}>
-                <li>Top 10 firms by compliance deterioration in last 30 days.</li>
-                <li>Companies with overdue filings and EDD simultaneously.</li>
-                <li>Rank firms by predicted risk × impact for November.</li>
-              </ul>
-              <div className="ask-input" style={{ marginTop: "8px" }}>
-                <input type="text" placeholder="Ask a question…" />
-                <button className="btn btn-primary" style={{ fontSize: ".6rem" }}>
-                  Run
-                </button>
-              </div>
-            </article>
+
+           {/* ASK UPILOT */}
+<article className="widget ask">
+  <div className="widget-head">
+    <div className="w-title">
+      <div className="w-icon">🤖</div>
+      Ask UPilot (AI Assistant)
+    </div>
+    <div className="mini-pill">Beta</div>
+  </div>
+
+  {/* Examples panel */}
+  <div className="ask-examples">
+    <p className="ask-ex-title">Examples:</p>
+    <ul className="ask-ex-list">
+      <li>Top 10 firms by compliance deterioration in last 30 days.</li>
+      <li>Companies with overdue filings and EDD simultaneously.</li>
+      <li>Rank firms by predicted risk × impact for November.</li>
+    </ul>
+  </div>
+
+  <div className="ask-input" style={{ marginTop: "8px" }}>
+    <input type="text" placeholder="Ask a question…" />
+    <button className="btn btn-primary" style={{ fontSize: ".6rem" }}>
+      Run
+    </button>
+  </div>
+</article>
+
           </section>
+<footer className="fsc-footer">
+  © 2025 — Powered by <span className="fsc-footer-brand">UPilot</span>
+</footer>
+
+
         </div>
       </div>
     </>
